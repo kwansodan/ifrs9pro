@@ -1,0 +1,13 @@
+from sklearn.linear_model import LogisticRegression
+import pickle
+
+# Dummy data
+X = [[1, 0, 3], [2, 1, 5], [0, 1, 4]]
+y = [0, 1, 0]
+
+model = LogisticRegression()
+model.fit(X, y)
+
+# Save model
+with open("models/logistic_model.pkl", "wb") as file:
+    pickle.dump(model, file)
